@@ -6,10 +6,10 @@ namespace BaseLibrary.DTOs
     {
         [DataType(DataType.EmailAddress)]
         [Required(ErrorMessage = "Email is required.")]
-        public  string Email { get; set; }
+        public string Email { get; set; }
 
         [DataType(DataType.Password)]
-        [Required(ErrorMessage = "Password is required.")]  
+        [Required(ErrorMessage = "Password is required.")]
         public string Password { get; set; }
     }
 }

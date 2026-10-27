@@ -18,5 +18,25 @@ namespace Host.Controllers
             var res=await userAccount.CreateAsync(user);
             return Ok(res);
         }
+        [HttpPost("login")]
+        public async Task<IActionResult> Login(Login user)
+        {
+            if (user == null)
+            {
+                return BadRequest("Login data is null.");
+            }
+            var res = await userAccount.LoginAsync(user);
+            return Ok(res);
+        }
+        [HttpPost("refresh-token")]
+        public async Task<IActionResult> RefreshToken(RefreshToken token)
+        {
+            if (token == null)
+            {
+                return BadRequest("Refresh token is null.");
+            }
+            var res = await userAccount.RefreshTokenAsync(token);
+            return Ok(res);
+        }
     }
 }
